@@ -76,18 +76,31 @@ CREATE TABLE categories(
 
 -- ২. Categories Table: 
         -- 6. How do you add a new category to the categories table? 
+        INSERT INTO categories (category_name) VALUES ("new Category");
+
         -- 7. How do you retrieve all categories from the categories table? 
+        SELECT * FROM categories;
+
         -- 8. How do you retrieve a specific category by its ID from the categories table? 
+        SELECT * FROM categories WHERE id = 5;
+
         -- 9. How do you update a category’s name in the categories table? 
+        UPDATE categories SET category_name = "Our Category" WHERE id = 1;
+
         -- 10. How do you delete a category by its ID from the categories table? 
+        DELETE FROM categories WHERE id = 1;
+
 
 
 -- ৩. Blogs Table: 
         -- 11. How do you add a new blog to the blogs table? 
+        INSERT INTO blogs (title, body, category_id, author_id) 
+        VALUES ("My Blog", "blog content", 3, 1)
         -- 12. How do you retrieve all blogs from the blogs table?
+        SELECT * FROM blogs;
 
         -- 13. How do you retrieve a specific blog by its ID from the blogs table? 
-        SELECT * FROM blogs 
+        SELECT * FROM blogs WHERE id = 1;
 
         -- 14. How do you retrieve all blogs with their category and author information? 
         SELECT blogs.title, blogs.body, categories.category_name, authors.author_name
@@ -116,14 +129,3 @@ CREATE TABLE categories(
         JOIN categories ON blogs.category_id = categories.id
         WHERE categories.category_name = "Lifestyle";
 
--- ### জমাদানের নির্দেশাবলী:
-
-
--- ৫. অ্যাসাইনমেন্ট পেজের Upload File সেকশ১. একটি নতুন GitHub রিপোজিটরি তৈরি করুন এবং blog_project.sql, data.sql, এবং blogs.sql ফাইলগুলো রিপোজিটরিতে অন্তর্ভুক্ত করুন।
-
--- - **blog_project.sql** ফাইলে টেবিল ক্রিয়েশন এবং অন্যান্য প্রয়োজনীয় কুইরি থাকবে। -
---  **data.sql** ফাইলে শুধুমাত্র ডেমো ডাটা ইনসার্ট করার জন্য কুইরি থাকবে। - 
--- **blogs.sql** ফাইলে XAMPP থেকে এক্সপোর্ট করা কুইরি থাকবে, যাতে সহজেই ব্লগ টেবিলটি ডেটাবেসে ইমপোর্ট করা যায়। 
--- ২. blogs.sql ফাইলটি XAMPP থেকে এক্সপোর্ট করে যোগ করতে হবে। 
--- ৩. শুধুমাত্র GitHub রিপোজিটরি লিঙ্ক জমা দিতে হবে। 
--- ৪. ডেডলাইনের পরে আপনার কোডে কোনো পরিবর্তন করা যাবে না। নে কোনো ফাইল আপলোড করার প্রয়োজন নেই।
